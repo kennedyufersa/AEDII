@@ -9,29 +9,44 @@ typedef struct node {
 
 typedef No noRaiz;
 
+//Grupo 01;
 noRaiz criarArvore();
-int inserir(noRaiz);
-int inserirEmLote(noRaiz);
-int remover(noRaiz, Aluno a);
-Aluno buscar(noRaiz, Aluno a);
-void deletarArvore(noRaiz);
+noRaiz criarArvore(Aluno);
+void nivelIter(noRaiz);
 
-//Recursivo
+//Grupo 02
 void preordemRec(noRaiz);
 void inordemRec(noRaiz);
 void posordemRec(noRaiz);
-void nivelRec(noRaiz);
+Aluno buscar(noRaiz, Aluno);
 
-//Iterativo
+//Grupo 03
+int inserir(noRaiz, Aluno);
+int inserirEmLote(noRaiz, Aluno);
+
+//Grupo 04
+int remover(noRaiz, Aluno);
+
+//Grupo 05
+void deletarArvore(noRaiz);
+
+//Grupo 06
 void preordemIter(noRaiz);
-void inordemIter(noRaiz);
-void posordemIter(noRaiz);
-void nivelIter(noRaiz);
 
+//Grupo 07
+void inordemIter(noRaiz);
+
+//Grupo 08
+void posordemIter(noRaiz);
+
+//Grupo 09
 int altura(noRaiz);
 int alturaDoNo(noRaiz);
+
+//Grupo 10
 void valoresEntre(int idA, int idB);
 
+//Grupo 11 - Professor
 int tempoDeBusca();
 int tempoDeRemocao();
 int tempoDeInsercao();
@@ -44,4 +59,30 @@ int main( )
     raiz->esq = 0;
     raiz->dir = 0;
     raiz->A = K;
+
+    Aluno B = criarAluno(12, "Francisco\0", 9.);
+    Aluno C = criarAluno(15, "Pedro\0", 8.);
+    Aluno D = criarAluno(8, "Henrique\0", 7.);
+
+    noRaiz r = criarArvore(B);
+    r->dir = criarArvore(C);
+    r->esq = criarArvore(D);
+
+    preordemIter(r);
+}
+
+noRaiz criarArvore(Aluno A){
+    noRaiz raiz = (No) malloc(sizeof(struct node));
+    raiz->A = A;
+    raiz->dir = 0;
+    raiz->esq = 0;
+    return raiz;
+}
+
+void preordemRec(noRaiz raiz){
+    if(raiz != 0){
+        printf("%s\n", raiz->A->nome);
+        preordemRec(raiz->esq);
+        preordemRec(raiz->dir);   
+    }
 }

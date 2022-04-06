@@ -1,13 +1,14 @@
 #ifndef ALUNO_C
 #define ALUNO_C
 #include<stdlib.h>
+
 typedef struct aluno{
     int id;
     char *nome;
     float nota;
 }*Aluno;
 
-Aluno criarAluno(int a, char* b, unsigned short c){
+Aluno criarAluno(int a, char* b, float c){
     Aluno A =(Aluno) malloc(sizeof(struct aluno));
     A->id = a;
     A->nome = b;

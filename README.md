@@ -41,8 +41,8 @@ typedef struct node {
 typedef No noRaiz;
 
 noRaiz criarArvore();
-int inserir(noRaiz);
-int inserirEmLote(noRaiz);
+int inserir(noRaiz, Aluno);
+int inserirEmLote(noRaiz, noRaiz);
 int remover(noRaiz, Aluno a);
 Aluno buscar(noRaiz, Aluno a);
 void deletarArvore(noRaiz);

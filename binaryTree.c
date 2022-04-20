@@ -22,7 +22,7 @@ Aluno buscar(noRaiz, Aluno);
 
 //Grupo 03
 int inserir(noRaiz, Aluno);
-int inserirEmLote(noRaiz, noRaiz);
+int inserirEmLote(noRaiz, aluno*, int);
 
 //Grupo 04
 int remover(noRaiz, Aluno);

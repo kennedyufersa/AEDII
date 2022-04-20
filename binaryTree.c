@@ -41,7 +41,7 @@ void posordemIter(noRaiz);
 
 //Grupo 09
 int altura(noRaiz);
-int alturaDoNo(noRaiz);
+int alturaDoNo(noRaiz, Aluno);
 
 //Grupo 10
 void valoresEntre(int idA, int idB);
